@@ -2,7 +2,30 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "pokemon-normal": "#A8A77A",
+        "pokemon-fire": "#EE8130",
+        "pokemon-water": "#6390F0",
+        "pokemon-electric": "#F7D02C",
+        "pokemon-grass": "#7AC74C",
+        "pokemon-ice": "#96D9D6",
+        "pokemon-fighting": "#C22E28",
+        "pokemon-poison": "#A33EA1",
+        "pokemon-ground": "#E2BF65",
+        "pokemon-flying": "#A98FF3",
+        "pokemon-psychic": "#F95587",
+        "pokemon-bug": "#A6B91A",
+        "pokemon-rock": "#B6A136",
+        "pokemon-ghost": "#735797",
+        "pokemon-dragon": "#6F35FC",
+        "pokemon-dark": "#705746",
+        "pokemon-steel": "#B7B7CE",
+        "pokemon-fairy": "#D685AD",
+        "pokemon-theme-yellow": "#ffcb05",
+        "pokemon-theme-blue": "#2a75bb",
+      },
+    },
   },
   variants: {
     extend: {},
