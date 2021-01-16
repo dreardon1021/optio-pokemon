@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { gql, useQuery } from "@apollo/client";
 import { FullPokemonList } from "../types/FullPokemonList";
 import { PokeList } from "./PokeList";
-import { RouteComponentProps } from "react-router";
+import { RouteComponentProps, withRouter } from "react-router";
 
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
@@ -26,9 +26,9 @@ interface PokeVariables {
   offset: number;
 }
 
-export const GetPokeList: FC<RouteComponentProps> = () => {
+const GetPokeList: FC<RouteComponentProps> = () => {
   const { loading, error, data } = useQuery<FullPokemonList, PokeVariables>(GET_POKEMONS, {
-    variables: { limit: 2, offset: 1 },
+    variables: { limit: 10, offset: 0 },
   });
 
   if (loading) {
@@ -48,3 +48,5 @@ export const GetPokeList: FC<RouteComponentProps> = () => {
     </div>
   );
 };
+
+export default withRouter(GetPokeList);
