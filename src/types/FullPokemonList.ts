@@ -1,17 +1,13 @@
 export interface FullPokemonList {
-  pokemons: {
-    [key: string]: PokemonsTwentyCount;
-  };
+  pokemons: OriginalPokemonsList;
 }
 
-interface PokemonsTwentyCount {
-  count: number;
-  next: string;
-  previous: string;
+export interface OriginalPokemonsList {
   results: SinglePokemon[];
 }
 
-interface SinglePokemon {
+export interface SinglePokemon {
+  image: string;
   name: string;
   url: string;
 }

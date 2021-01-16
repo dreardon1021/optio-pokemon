@@ -7,11 +7,6 @@ import { RouteComponentProps, withRouter } from "react-router";
 const GET_POKEMONS = gql`
   query pokemons($limit: Int, $offset: Int) {
     pokemons(limit: $limit, offset: $offset) {
-      count
-      next
-      previous
-      status
-      message
       results {
         url
         name
@@ -28,7 +23,7 @@ interface PokeVariables {
 
 const GetPokeList: FC<RouteComponentProps> = () => {
   const { loading, error, data } = useQuery<FullPokemonList, PokeVariables>(GET_POKEMONS, {
-    variables: { limit: 10, offset: 0 },
+    variables: { limit: 150, offset: 0 },
   });
 
   if (loading) {
@@ -44,7 +39,7 @@ const GetPokeList: FC<RouteComponentProps> = () => {
   return (
     <div>
       <p>YOU DID IT!</p>
-      <PokeList />
+      <PokeList allPokemon={data} />
     </div>
   );
 };
