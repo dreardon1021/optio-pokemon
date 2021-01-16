@@ -1,8 +1,6 @@
-export default interface FullPokemonList {
-  data: {
-    pokemons: {
-      [key: string]: PokemonsTwentyCount;
-    };
+export interface FullPokemonList {
+  pokemons: {
+    [key: string]: PokemonsTwentyCount;
   };
 }
 
