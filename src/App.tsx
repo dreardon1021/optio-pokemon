@@ -1,8 +1,6 @@
 import React, { FC } from "react";
-import { H1 } from "./blocks/H1";
-import PrimaryButton from "./blocks/PrimaryButton";
 import { Route, Switch } from "react-router-dom";
-import GetPokeList from "./PokeList/GetPokeList";
+import GetPokeList from "./components/PokeList/PokeList/GetPokeList";
 
 const App: FC = () => {
   return (

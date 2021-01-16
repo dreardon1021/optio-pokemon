@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { FullPokemonList } from "../types/FullPokemonList";
+import { FullPokemonList } from "../../../types/Pokemon";
 
 interface Props {
   allPokemon: FullPokemonList | undefined;
