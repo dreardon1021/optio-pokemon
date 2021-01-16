@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { gql, useQuery } from "@apollo/client";
-import { FullPokemonList } from "../../../types/Pokemon";
-import { PokeList } from "./PokeList";
+import { FullPokemonList } from "../../types/Pokemon";
+import PokeList from "./PokeList";
 import { RouteComponentProps, withRouter } from "react-router";
 
 const GET_POKEMONS = gql`
@@ -38,7 +38,7 @@ const GetPokeList: FC<RouteComponentProps> = () => {
 
   return (
     <div>
-      <PokeList allPokemon={data} />
+      <PokeList allPokemon={data?.pokemons?.results} />
     </div>
   );
 };
