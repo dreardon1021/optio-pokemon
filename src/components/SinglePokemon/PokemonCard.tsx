@@ -40,16 +40,16 @@ const PokemonCard: FC<Props> = ({ name, image }) => {
 
   return (
     <article
-      className={`bg-pokemon-${data?.pokemon.types[0].type.name} w-2/5 flex flex-col items-center justify-between p-4 rounded-lg border-solid border-2 border-black mt-4`}
+      className={`bg-pokemon-${data?.pokemon.types[0].type.name} w-2/5 flex flex-col items-center justify-between p-4 rounded-xl mt-4`}
     >
-      <H3>{letCapitalPokeName}</H3>
+      <H3 className="text-white">{letCapitalPokeName}</H3>
       <div className="flex justify-around w-full">
         <div className="w-2/5">
           <PokemonType types={data?.pokemon?.types} pokemonName={name} />
         </div>
         <img className="w-2/5" src={image} alt={name} />
       </div>
-      <Link to="/:name">
+      <Link to={`/${name}`}>
         <PrimaryButton>View</PrimaryButton>
       </Link>
     </article>

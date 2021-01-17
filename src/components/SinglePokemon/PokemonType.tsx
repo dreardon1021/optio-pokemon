@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Type, TypeObject } from "../../types/Pokemon";
+import { TypeObject } from "../../types/Pokemon";
 
 interface Props {
   types: TypeObject[] | undefined;
@@ -16,7 +16,7 @@ const PokemonType: FC<Props> = ({ types, pokemonName }) => {
       {types?.map((type: TypeObject) => {
         return (
           <p
-            className={`md:w-3/5 bg-pokemon-${type.type.name} rounded-lg p-1 border-solid border-black border-2 mb-2 w-full`}
+            className={`text-white font-semibold text-center md:w-3/5 bg-pokemon-${type.type.name} rounded-lg p-1 border-solid border-black border-2 mb-2 w-full`}
             key={type.type.name + pokemonName}
           >
             {capitalPokeType(type.type.name)}
