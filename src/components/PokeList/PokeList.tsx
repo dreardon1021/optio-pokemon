@@ -29,7 +29,10 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
 
   const renderPageNumbers = pageNumbers.map((number) => {
     return (
-      <li className="bg-pokemon-theme-yellow font-semi-bold w-12 rounded-lg ml-2 mt-2" key={number}>
+      <li
+        className="bg-pokemon-theme-yellow font-semi-bold w-12 rounded-lg ml-2 mt-2 border-black border-solid border-2"
+        key={number}
+      >
         <button
           id={`${number}`}
           onClick={handleClick}
