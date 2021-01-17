@@ -15,8 +15,17 @@ export const GET_POKEMONS = gql`
 export const FIND_ONE_POKEMON = gql`
   query pokemon($name: String!) {
     pokemon(name: $name) {
-      id
       name
+      moves {
+        move {
+          name
+        }
+      }
+      types {
+        type {
+          name
+        }
+      }
     }
   }
 `;
