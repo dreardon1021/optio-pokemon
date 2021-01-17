@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { Route, Switch } from "react-router-dom";
 import GetPokeList from "./components/PokeList/GetPokeList";
 import NavBar from "./components/NavBar/NavBar";
+import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
 
 const App: FC = () => {
   return (
@@ -9,6 +10,7 @@ const App: FC = () => {
       <NavBar />
       <Switch>
         <Route exact path="/" component={GetPokeList} />
+        <Route exact path="/:name" component={PokemonDetail} />
       </Switch>
     </main>
   );
