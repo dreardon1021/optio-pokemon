@@ -8,9 +8,9 @@ interface Props {
 
 const PokeList: FC<Props> = ({ allPokemon }) => {
   return (
-    <section>
+    <section className="w-full flex justify-around flex-wrap">
       {allPokemon?.map((pokemon) => {
-        return <PokemonCard key={pokemon.name} name={pokemon.name} />;
+        return <PokemonCard key={pokemon.name} name={pokemon.name} image={pokemon.image} />;
       })}
     </section>
   );

@@ -1,20 +1,9 @@
 import React, { FC } from "react";
-import { gql, useQuery } from "@apollo/client";
+import { useQuery } from "@apollo/client";
+import { GET_POKEMONS } from "../../util/gqlCalls";
 import { FullPokemonList } from "../../types/Pokemon";
 import PokeList from "./PokeList";
 import { RouteComponentProps, withRouter } from "react-router";
-
-const GET_POKEMONS = gql`
-  query pokemons($limit: Int, $offset: Int) {
-    pokemons(limit: $limit, offset: $offset) {
-      results {
-        url
-        name
-        image
-      }
-    }
-  }
-`;
 
 interface PokeVariables {
   limit: number;
@@ -34,13 +23,7 @@ const GetPokeList: FC<RouteComponentProps> = () => {
     return <p>{`error: ${error.message}`}</p>;
   }
 
-  console.log(data);
-
-  return (
-    <div>
-      <PokeList allPokemon={data?.pokemons?.results} />
-    </div>
-  );
+  return <PokeList allPokemon={data?.pokemons?.results} />;
 };
 
 export default withRouter(GetPokeList);
