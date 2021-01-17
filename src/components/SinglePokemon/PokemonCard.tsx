@@ -30,15 +30,25 @@ const PokemonCard: FC<Props> = ({ name, image }) => {
     );
   }
 
-  console.log(data);
+  if (error) {
+    return (
+      <article className="w-2/5 flex flex-col items-center justify-between p-4 rounded-lg border-solid border-2 border-black mb-4">
+        <H3>{`Error: ${error.message}`}</H3>
+      </article>
+    );
+  }
 
   return (
-    <article className="w-2/5 flex flex-col items-center justify-between p-4 rounded-lg border-solid border-2 border-black mb-4">
+    <article
+      className={`bg-pokemon-${data?.pokemon.types[0].type.name} w-2/5 flex flex-col items-center justify-between p-4 rounded-lg border-solid border-2 border-black mt-4`}
+    >
       <H3>{letCapitalPokeName}</H3>
-      <div>
-        <PokemonType types={data?.pokemon?.types} pokemonName={name} />
+      <div className="flex justify-around w-full">
+        <div className="w-2/5">
+          <PokemonType types={data?.pokemon?.types} pokemonName={name} />
+        </div>
+        <img className="w-2/5" src={image} alt={name} />
       </div>
-      <img src={image} alt={name} />
       <Link to="/:name">
         <PrimaryButton>View</PrimaryButton>
       </Link>

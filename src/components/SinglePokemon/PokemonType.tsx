@@ -7,12 +7,21 @@ interface Props {
 }
 
 const PokemonType: FC<Props> = ({ types, pokemonName }) => {
-  console.log(types);
+  const capitalPokeType = (typeName: string): string => {
+    return typeName.charAt(0).toUpperCase() + typeName.slice(1);
+  };
+
   return (
-    <div>
+    <div className="rounded-lg">
       {types?.map((type: TypeObject) => {
-        console.log(type.type.name);
-        return <p key={type.type.name + pokemonName}>{type.type.name}</p>;
+        return (
+          <p
+            className={`md:w-3/5 bg-pokemon-${type.type.name} rounded-lg p-1 border-solid border-black border-2 mb-2 w-full`}
+            key={type.type.name + pokemonName}
+          >
+            {capitalPokeType(type.type.name)}
+          </p>
+        );
       })}
     </div>
   );
