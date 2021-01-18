@@ -9,7 +9,6 @@ interface Props {
 
 const PokemonStats: FC<Props> = ({ data }) => {
   const exampleMoves = data?.pokemon.moves.slice(0, 4);
-  console.log(exampleMoves);
 
   return (
     <>
