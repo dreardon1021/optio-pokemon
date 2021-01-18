@@ -28,23 +28,27 @@ export interface TypeObject {
 }
 
 export interface DetailedPokeData {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  species: PokeSpecies;
-  abilities: PokeAbilities;
-  types: TypeObject[];
-}
-
-export interface PokeSpecies {
-  name: string;
+  pokemon: {
+    id: number;
+    name: string;
+    height: number;
+    weight: number;
+    abilities: PokeAbilities[];
+    moves: Moves[];
+    types: TypeObject[];
+  };
 }
 
 export interface PokeAbilities {
   ability: {
     name: string;
   };
+}
+
+export interface Moves {
+  move: {
+    name: string;
+  }
 }
 
 export interface OnePokeVariables {

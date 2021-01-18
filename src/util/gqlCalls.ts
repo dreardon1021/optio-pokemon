@@ -32,9 +32,11 @@ export const GET_POKE_DETAILS = gql`
       name
       height
       weight
-      species {
-        url
-        name
+      base_experience
+      moves {
+        move {
+          name
+        }
       }
       abilities {
         ability {

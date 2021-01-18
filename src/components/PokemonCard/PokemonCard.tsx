@@ -5,7 +5,8 @@ import { FetchOnePokemon, OnePokeVariables } from "../../types/Pokemon";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import PrimaryButton from "../../blocks/PrimaryButton";
-import PokemonType from "./PokemonType";
+import PokemonType from "../PokemonType/PokemonType";
+import { capitalizeFirstLetter } from "../../util/capitalizeFirstLetter";
 
 interface Props {
   name: string;
@@ -13,8 +14,6 @@ interface Props {
 }
 
 const PokemonCard: FC<Props> = ({ name, image }) => {
-  const letCapitalPokeName = name.charAt(0).toUpperCase() + name.slice(1);
-
   const { loading, error, data } = useQuery<FetchOnePokemon, OnePokeVariables>(FIND_ONE_POKEMON, {
     variables: { name: name },
   });
@@ -39,15 +38,23 @@ const PokemonCard: FC<Props> = ({ name, image }) => {
     <article
       className={`bg-pokemon-${data?.pokemon.types[0].type.name} w-4/5 sm:w-2/5 flex flex-col items-center justify-between p-4 rounded-xl mt-4`}
     >
-      <H3 className="text-white">{letCapitalPokeName}</H3>
+      <H3 className="text-white">{capitalizeFirstLetter(name)}</H3>
       <div className="flex justify-around w-full">
         <div className="w-2/5">
           <PokemonType types={data?.pokemon?.types} pokemonName={name} />
         </div>
         <img className="w-2/5" src={image} alt={name} />
       </div>
-      <Link to={`/${name}`}>
-        <PrimaryButton>View</PrimaryButton>
+      <Link
+        className="w-2/5"
+        to={{
+          pathname: `/${name}`,
+          state: {
+            image: image,
+          },
+        }}
+      >
+        <PrimaryButton className="w-full">View</PrimaryButton>
       </Link>
     </article>
   );
