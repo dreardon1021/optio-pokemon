@@ -7,6 +7,9 @@ import { GET_POKE_DETAILS } from "../../util/gqlCalls";
 import { DetailedPokeData, OnePokeVariables } from "../../types/Pokemon";
 import PokemonType from "../PokemonType/PokemonType";
 import PokemonStats from "../PokemonStats/PokemonStats";
+import { capitalizeFirstLetter } from "../../util/capitalizeFirstLetter";
+import PrimaryButton from "../../blocks/PrimaryButton";
+import { Link } from "react-router-dom";
 
 interface Location {
   location: {
@@ -19,7 +22,6 @@ interface Location {
 const PokemonDetailCard: FC<RouteComponentProps & Location> = ({ match, location }) => {
   const name = match.url.slice(1);
   const pokeImage = location.state.image;
-  const pokemonNameCapitalize = name.charAt(0).toUpperCase() + name.slice(1);
 
   const { loading, error, data } = useQuery<DetailedPokeData, OnePokeVariables>(GET_POKE_DETAILS, {
     variables: { name: name },
@@ -45,9 +47,9 @@ const PokemonDetailCard: FC<RouteComponentProps & Location> = ({ match, location
 
   return (
     <section
-      className={`w-3/4 p-4 bg-pokemon-${data?.pokemon.types[0].type.name} flex flex-col justify-between items-center mt-8 rounded-2xl`}
+      className={`w-3/4 p-4 bg-pokemon-${data?.pokemon.types[0].type.name} flex flex-col justify-between items-center mt-8 mb-12 rounded-2xl`}
     >
-      <H2>{pokemonNameCapitalize}</H2>
+      <H2 className="text-white">{capitalizeFirstLetter(name)}</H2>
       <div className="flex justify-between w-full">
         <img className="w-full" src={pokeImage} alt={`image-of-${name}`} />
         <div className="w-full flex flex-col justify-items-center">
@@ -55,6 +57,9 @@ const PokemonDetailCard: FC<RouteComponentProps & Location> = ({ match, location
           <PokemonStats data={data} />
         </div>
       </div>
+      <Link className="mt-12 w-1/4" to="/">
+        <PrimaryButton className="w-full">Go Back</PrimaryButton>
+      </Link>
     </section>
   );
 };
