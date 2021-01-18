@@ -10,7 +10,7 @@ const App: FC = () => {
       <NavBar />
       <Switch>
         <Route exact path="/" component={GetPokeList} />
-        <Route exact path="/:name" component={PokemonDetail} />
+        <Route exact path="/:name" render={(props) => <PokemonDetail {...props} />} />
       </Switch>
     </main>
   );
