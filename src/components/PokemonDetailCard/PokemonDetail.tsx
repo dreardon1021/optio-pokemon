@@ -43,14 +43,12 @@ const PokemonDetailCard: FC<RouteComponentProps & Location> = ({ match, location
     );
   }
 
-  console.log(data);
-
   return (
     <section
       className={`w-3/4 p-4 bg-pokemon-${data?.pokemon.types[0].type.name} flex flex-col justify-between items-center mt-8 mb-12 rounded-2xl`}
     >
       <H2 className="text-white">{capitalizeFirstLetter(name)}</H2>
-      <div className="flex justify-between w-full">
+      <div className="flex flex-col md:flex-row justify-between w-full">
         <img className="w-full" src={pokeImage} alt={`image-of-${name}`} />
         <div className="w-full flex flex-col justify-items-center">
           <PokemonType types={data?.pokemon.types} pokemonName={name} />
