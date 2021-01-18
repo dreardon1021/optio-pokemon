@@ -46,6 +46,7 @@ const PokemonCard: FC<Props> = ({ name, image }) => {
         <img className="w-2/5" src={image} alt={name} />
       </div>
       <Link
+        className="w-2/5"
         to={{
           pathname: `/${name}`,
           state: {
@@ -53,7 +54,7 @@ const PokemonCard: FC<Props> = ({ name, image }) => {
           },
         }}
       >
-        <PrimaryButton>View</PrimaryButton>
+        <PrimaryButton className="w-full">View</PrimaryButton>
       </Link>
     </article>
   );
