@@ -30,14 +30,13 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
   const renderPageNumbers = pageNumbers.map((number) => {
     return (
       <li
-        className="bg-pokemon-theme-yellow font-semi-bold w-12 rounded-lg ml-2 mt-2 border-black border-solid border-2"
+        className={
+          (currentPage === number ? "bg-pokemon-theme-blue " : "") +
+          "bg-pokemon-theme-yellow font-semi-bold w-12 rounded-lg ml-2 mt-2 border-black border-solid border-2"
+        }
         key={number}
       >
-        <button
-          id={`${number}`}
-          onClick={handleClick}
-          className={(currentPage === number ? "active " : "") + "cursor-pointer w-full"}
-        >
+        <button id={`${number}`} onClick={handleClick} className="cursor-pointer w-full">
           {number}
         </button>
       </li>
