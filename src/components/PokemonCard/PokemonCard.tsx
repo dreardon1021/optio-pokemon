@@ -5,7 +5,7 @@ import { FetchOnePokemon, OnePokeVariables } from "../../types/Pokemon";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
 import PrimaryButton from "../../blocks/PrimaryButton";
-import PokemonType from "./PokemonType";
+import PokemonType from "../PokemonType/PokemonType";
 
 interface Props {
   name: string;
@@ -46,7 +46,14 @@ const PokemonCard: FC<Props> = ({ name, image }) => {
         </div>
         <img className="w-2/5" src={image} alt={name} />
       </div>
-      <Link to={`/${name}`}>
+      <Link
+        to={{
+          pathname: `/${name}`,
+          state: {
+            image: image,
+          },
+        }}
+      >
         <PrimaryButton>View</PrimaryButton>
       </Link>
     </article>

@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { SinglePokemon } from "../../types/Pokemon";
-import PokemonCard from "../SinglePokemon/PokemonCard";
+import PokemonCard from "../PokemonCard/PokemonCard";
 
 interface Props {
   allPokemon: SinglePokemon[] | undefined;

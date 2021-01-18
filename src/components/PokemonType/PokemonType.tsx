@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { TypeObject } from "../../types/Pokemon";
+import { capitalizeFirstLetter } from "../../util/capitalizeFirstLetter";
 
 interface Props {
   types: TypeObject[] | undefined;
@@ -8,11 +9,11 @@ interface Props {
 
 const PokemonType: FC<Props> = ({ types, pokemonName }) => {
   const capitalPokeType = (typeName: string): string => {
-    return typeName.charAt(0).toUpperCase() + typeName.slice(1);
+    return capitalizeFirstLetter(typeName);
   };
 
   return (
-    <div className="rounded-lg">
+    <div className="rounded-lg w-full flex flex-col items-center">
       {types?.map((type: TypeObject) => {
         return (
           <p
