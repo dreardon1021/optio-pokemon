@@ -1,14 +1,18 @@
 import React, { FC } from "react";
-import { H1 } from "./blocks/H1";
-import PrimaryButton from "./blocks/PrimaryButton";
 import { Route, Switch } from "react-router-dom";
-import GetPokeList from "./PokeList/GetPokeList";
+import GetPokeList from "./components/PokeList/GetPokeList";
+import NavBar from "./components/NavBar/NavBar";
+import PokemonDetail from "./components/PokemonDetail/PokemonDetail";
 
 const App: FC = () => {
   return (
-    <Switch>
-      <Route exact path="/" component={GetPokeList} />
-    </Switch>
+    <main>
+      <NavBar />
+      <Switch>
+        <Route exact path="/" component={GetPokeList} />
+        <Route exact path="/:name" component={PokemonDetail} />
+      </Switch>
+    </main>
   );
 };
 
