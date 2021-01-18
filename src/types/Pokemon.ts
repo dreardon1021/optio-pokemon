@@ -28,13 +28,15 @@ export interface TypeObject {
 }
 
 export interface DetailedPokeData {
-  id: number;
-  name: string;
-  height: number;
-  weight: number;
-  species: PokeSpecies;
-  abilities: PokeAbilities;
-  types: TypeObject[];
+  pokemon: {
+    id: number;
+    name: string;
+    height: number;
+    weight: number;
+    species: PokeSpecies;
+    abilities: PokeAbilities[];
+    types: TypeObject[];
+  };
 }
 
 export interface PokeSpecies {
