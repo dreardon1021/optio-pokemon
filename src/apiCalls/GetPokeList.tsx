@@ -1,8 +1,8 @@
 import React, { FC } from "react";
 import { useQuery } from "@apollo/client";
-import { GET_POKEMONS } from "../../apiCalls/gqlCalls";
-import { FullPokemonList } from "../../types/Pokemon";
-import PokeList from "./PokeList";
+import { GET_POKEMONS } from "./gqlCalls";
+import { FullPokemonList } from "../types/Pokemon";
+import PokeList from "../components/PokeList/PokeList";
 import { RouteComponentProps, withRouter } from "react-router";
 
 interface PokeVariables {
