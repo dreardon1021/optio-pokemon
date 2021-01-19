@@ -3,7 +3,14 @@
 This project was a learning experience as it was my first time using Apollo, GQL. This was also my first time developing a TypeScript app from scratch. Most of the time on this 15 hour project was spent learning GQL/Apollo and battling typescript errors. This was a great experiment for me as I brought together all of the things I have learned during my time at Mintbean!
 
 For development, Pull down this repo and in your terminal, do 'yarn start'
-Deployed GitHub Pages:
+
+Future Iterations:
+Refactor gql calls to pass data down into the dumb components instead of calling the API on the component itself
+Add Search/Filter functionality
+Add more pokemon
+Add Pokemon Generations
+
+If I was able to, I would of liked to have been able to edit the API so that the items were not so nested and I was able to get more pokemon information on the initial PokemonList call. For example, on this app I displayed the pokemon types on the initial call. The API requires 10 API calls per page to do this because when fetching the pokemon list, all that is obtainable is the Poke URL, Name, and Image. This isnt great performance for the app but with an api change this can be fixed and make apps look great and run!
 
 
 ## Screenshots
