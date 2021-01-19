@@ -12,8 +12,8 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
   const pokemonPerPage = 10;
 
   const indexOfLastPokemon = currentPage * pokemonPerPage;
-  const indexOfFirstRestaurant = indexOfLastPokemon - pokemonPerPage;
-  const currentPokemon = allPokemon?.slice(indexOfFirstRestaurant, indexOfLastPokemon);
+  const indexOfFirstPokemon = indexOfLastPokemon - pokemonPerPage;
+  const currentPokemon = allPokemon?.slice(indexOfFirstPokemon, indexOfLastPokemon);
 
   const pageNumbers = [];
 
@@ -23,11 +23,6 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
     }
   }
 
-  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const target = e.target as Element;
-    setCurrentPage(Number(target.id));
-  };
-
   const renderPageNumbers = pageNumbers.map((number) => {
     return (
       <li
@@ -35,9 +30,13 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
           (currentPage === number ? "bg-pokemon-theme-blue " : "") +
           "bg-pokemon-theme-yellow font-semi-bold w-12 rounded-lg ml-2 mt-2 border-black border-solid border-2"
         }
-        key={number}
+        key={`page-${number}`}
       >
-        <button id={`${number}`} onClick={handleClick} className="cursor-pointer w-full">
+        <button
+          id={`page-${number}`}
+          onClick={(e) => setCurrentPage(Number(e.currentTarget.id.slice(5)))}
+          className="cursor-pointer w-full"
+        >
           {number}
         </button>
       </li>
