@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/optio-pokemon/static/css/main.2457d835.chunk.css",
+    "main.css": "/optio-pokemon/static/css/main.5db732a8.chunk.css",
     "main.js": "/optio-pokemon/static/js/main.4cddb391.chunk.js",
     "main.js.map": "/optio-pokemon/static/js/main.4cddb391.chunk.js.map",
     "runtime-main.js": "/optio-pokemon/static/js/runtime-main.58971fd8.js",
@@ -8,7 +8,7 @@
     "static/js/2.259ef74f.chunk.js": "/optio-pokemon/static/js/2.259ef74f.chunk.js",
     "static/js/2.259ef74f.chunk.js.map": "/optio-pokemon/static/js/2.259ef74f.chunk.js.map",
     "index.html": "/optio-pokemon/index.html",
-    "static/css/main.2457d835.chunk.css.map": "/optio-pokemon/static/css/main.2457d835.chunk.css.map",
+    "static/css/main.5db732a8.chunk.css.map": "/optio-pokemon/static/css/main.5db732a8.chunk.css.map",
     "static/js/2.259ef74f.chunk.js.LICENSE.txt": "/optio-pokemon/static/js/2.259ef74f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/optio-pokemon/static/media/PokeBackgound.cc4eaab3.jpg",
     "static/media/PokeLogo.03d2cb1c.png": "/optio-pokemon/static/media/PokeLogo.03d2cb1c.png"
@@ -16,7 +16,7 @@
   "entrypoints": [
     "static/js/runtime-main.58971fd8.js",
     "static/js/2.259ef74f.chunk.js",
-    "static/css/main.2457d835.chunk.css",
+    "static/css/main.5db732a8.chunk.css",
     "static/js/main.4cddb391.chunk.js"
   ]
 }
