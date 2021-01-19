@@ -44,7 +44,7 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
     );
   });
 
-  const renerCurrentPokemon = () => {
+  const renderCurrentPokemon = () => {
     return (
       <div className="w-full flex justify-around flex-wrap">
         {currentPokemon?.map((pokemon) => {
@@ -57,7 +57,7 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
   return (
     <section className="w-full flex flex-col items-center">
       <ul className="flex flex-wrap justify-between w-4/5 mt-8 mb-8">{renderPageNumbers}</ul>
-      {renerCurrentPokemon()}
+      {renderCurrentPokemon()}
       <ul className="flex flex-wrap justify-between w-4/5 mt-8 mb-8">{renderPageNumbers}</ul>
     </section>
   );
