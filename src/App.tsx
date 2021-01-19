@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { Route, Switch } from "react-router-dom";
-import GetPokeList from "./components/PokeList/GetPokeList";
+import GetPokeList from "./apiCalls/GetPokeList";
 import NavBar from "./components/NavBar/NavBar";
 import PokemonDetailCard from "./components/PokemonDetailCard/PokemonDetail";
 
