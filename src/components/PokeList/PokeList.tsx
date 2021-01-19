@@ -23,7 +23,7 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
     }
   }
 
-  const renderPageNumbers = pageNumbers.map((number) => {
+  const renderPageButtons = pageNumbers.map((number) => {
     return (
       <li
         className={
@@ -55,9 +55,9 @@ const PokeList: FC<Props> = ({ allPokemon }) => {
 
   return (
     <section className="w-full flex flex-col items-center">
-      <ul className="flex flex-wrap justify-between w-4/5 mt-8 mb-8">{renderPageNumbers}</ul>
+      <ul className="flex flex-wrap justify-between w-4/5 mt-8 mb-8">{renderPageButtons}</ul>
       {renderCurrentPokemon()}
-      <ul className="flex flex-wrap justify-between w-4/5 mt-8 mb-8">{renderPageNumbers}</ul>
+      <ul className="flex flex-wrap justify-between w-4/5 mt-8 mb-8">{renderPageButtons}</ul>
     </section>
   );
 };
