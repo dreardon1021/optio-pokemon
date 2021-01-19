@@ -31,7 +31,7 @@ const PokemonStats: FC<Props> = ({ data }) => {
         {exampleMoves &&
           exampleMoves.map((move) => {
             return (
-              <p className="text-lg font-semibold mb-1" key={move.move.name}>
+              <p className="text-lg font-semibold mb-1" key={`${data?.pokemon.name}-${move.move.name}`}>
                 {capitalizeFirstLetter(move.move.name)}
               </p>
             );
