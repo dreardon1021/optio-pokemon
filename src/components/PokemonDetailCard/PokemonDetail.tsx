@@ -3,7 +3,7 @@ import { H2 } from "../../blocks/H2";
 import { H3 } from "../../blocks/H3";
 import { RouteComponentProps, withRouter } from "react-router";
 import { useQuery } from "@apollo/client";
-import { GET_POKE_DETAILS } from "../../util/gqlCalls";
+import { GET_POKE_DETAILS } from "../../apiCalls/gqlCalls";
 import { DetailedPokeData, OnePokeVariables } from "../../types/Pokemon";
 import PokemonType from "../PokemonType/PokemonType";
 import PokemonStats from "../PokemonStats/PokemonStats";

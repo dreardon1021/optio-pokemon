@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { H3 } from "../../blocks/H3";
-import { FIND_ONE_POKEMON } from "../../util/gqlCalls";
+import { FIND_ONE_POKEMON } from "../../apiCalls/gqlCalls";
 import { FetchOnePokemon, OnePokeVariables } from "../../types/Pokemon";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";

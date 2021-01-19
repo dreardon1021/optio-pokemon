@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useQuery } from "@apollo/client";
-import { GET_POKEMONS } from "../../util/gqlCalls";
+import { GET_POKEMONS } from "../../apiCalls/gqlCalls";
 import { FullPokemonList } from "../../types/Pokemon";
 import PokeList from "./PokeList";
 import { RouteComponentProps, withRouter } from "react-router";
