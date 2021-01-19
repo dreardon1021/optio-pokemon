@@ -38,6 +38,7 @@
   "scripts": {
     "lint": "eslint src",
     "start": "craco start",
+    "predeploy": "yarn build",
     "build": "craco build",
     "test": "craco test",
     "deploy": "gh-pages -d build",
