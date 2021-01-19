@@ -41,7 +41,7 @@ const PokemonCard: FC<Props> = ({ name, image }) => {
       <H3 className="text-white">{capitalizeFirstLetter(name)}</H3>
       <div className="flex justify-around w-full">
         <div className="w-2/5">
-          <PokemonType types={data?.pokemon?.types} pokemonName={name} />
+          <PokemonType types={data?.pokemon.types} pokemonName={name} />
         </div>
         <img className="w-2/5" src={image} alt={name} />
       </div>
