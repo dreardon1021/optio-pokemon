@@ -9,15 +9,16 @@ interface Props {
 const PokeList: FC<Props> = ({ allPokemon }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const pokemonCount = allPokemon?.length;
+  const pokemonPerPage = 10;
 
-  const indexOfLastPokemon = currentPage * 10;
-  const indexOfFirstRestaurant = indexOfLastPokemon - 10;
+  const indexOfLastPokemon = currentPage * pokemonPerPage;
+  const indexOfFirstRestaurant = indexOfLastPokemon - pokemonPerPage;
   const currentPokemon = allPokemon?.slice(indexOfFirstRestaurant, indexOfLastPokemon);
 
   const pageNumbers = [];
 
   if (pokemonCount) {
-    for (let i = 1; i <= Math.ceil(pokemonCount / 10); i++) {
+    for (let i = 1; i <= Math.ceil(pokemonCount / pokemonPerPage); i++) {
       pageNumbers.push(i);
     }
   }
